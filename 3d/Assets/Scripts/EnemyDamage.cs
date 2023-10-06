@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using UnityEditor.Callbacks;
-using UnityEditor.ShortcutManagement;
 using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour

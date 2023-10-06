@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Collection : MonoBehaviour
 {
+
+    public AudioSource source;
+    public AudioClip clip;
+
+    public float  CollectionDelay;
    private void OnTriggerEnter(Collider other)
 {
      PlayerManager playermanager = other.GetComponent<PlayerManager>();
@@ -12,7 +17,9 @@ public class Collection : MonoBehaviour
      if(playermanager != null)
      {
          playermanager.WoodCollected();
-         Destroy(gameObject);            
+         source.PlayOneShot(clip);
+         Destroy(gameObject, CollectionDelay);            
      }
 }
+
 }
