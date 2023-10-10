@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
+
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -87,6 +89,8 @@ namespace StarterAssets
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
 
+        static public bool dialouge = false;
+
         // timeout deltatime
         private float _jumpTimeoutDelta;
         private float _fallTimeoutDelta;
@@ -97,6 +101,7 @@ namespace StarterAssets
         private int _animIDJump;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
+        private int _animIDAttack;
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
         private PlayerInput _playerInput;
@@ -158,7 +163,8 @@ namespace StarterAssets
 
             JumpAndGravity();
             GroundedCheck();
-            Move();
+               Move(); 
+
         }
 
         private void LateUpdate()
@@ -173,6 +179,7 @@ namespace StarterAssets
             _animIDJump = Animator.StringToHash("Jump");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+            _animIDAttack = Animator.StringToHash("Attack");
         }
 
         private void GroundedCheck()

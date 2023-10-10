@@ -11,6 +11,7 @@ public class EnemyDamage : MonoBehaviour
 
     private PlayerHealthController playerHealth; //Reference to the players health;
     private float lastAttackTime; //Time since the last attack occured;
+    private float initialcoolDown = 0f;
 
     public GameObject player; //reference to the player gameobject;
 

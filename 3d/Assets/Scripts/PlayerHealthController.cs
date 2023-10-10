@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Threading;
 
 public class PlayerHealthController : MonoBehaviour
 {
-    public int maxHealth = 100;           // Maximum health of the player
+ public int maxHealth = 100;           // Maximum health of the player
     public int currentHealth;             // Current health of the player
-    public TextMeshProUGUI healthText;               // Reference to a UI Text element to display health
+    public TextMeshProUGUI healthText;   // Reference to a UI Text element to display health
 
+    [SerializeField] private HealthBar _healthbar;
     private void Start()
     {
         currentHealth = maxHealth;        // Set the initial health to the maximum health
-        UpdateHealthUI();                // Update the health UI on start
+        _healthbar.UpdateHealthBar(maxHealth, currentHealth);
+        UpdateHealthUI();                // Update the health UI
     }
 
     // Method to take damage
@@ -21,6 +24,7 @@ public class PlayerHealthController : MonoBehaviour
     {
         currentHealth -= damageAmount;    // Subtract damage from current health
         currentHealth = Mathf.Max(0, currentHealth); // Ensure health doesn't go below 0
+        _healthbar.UpdateHealthBar(maxHealth, currentHealth);
         UpdateHealthUI();                // Update the health UI
         if (currentHealth <= 0)
         {
@@ -32,19 +36,19 @@ public class PlayerHealthController : MonoBehaviour
     public void Heal(int healAmount)
     {
         currentHealth += healAmount;      // Add healing to current health
+        _healthbar.UpdateHealthBar(maxHealth, currentHealth);
         currentHealth = Mathf.Min(maxHealth, currentHealth); // Ensure health doesn't exceed maxHealth
         UpdateHealthUI();                // Update the health UI
     }
 
     // Method to update the health UI
-    private void UpdateHealthUI()
+        private void UpdateHealthUI()
     {
         if (healthText != null)
         {
-            healthText.text = "Health: " + currentHealth.ToString() + " / " + maxHealth.ToString();
+            healthText.text =currentHealth.ToString() + " / " + maxHealth.ToString();
         }
     }
-
     // Method to handle the player's death (you can customize this)
     private void Die()
     {
