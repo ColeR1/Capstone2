@@ -42,7 +42,7 @@ public class PlayerHealthController : MonoBehaviour
     }
 
     // Method to update the health UI
-        private void UpdateHealthUI()
+        public  void UpdateHealthUI()
     {
         if (healthText != null)
         {

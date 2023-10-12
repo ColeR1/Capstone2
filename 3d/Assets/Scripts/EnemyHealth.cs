@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private int health = 100;
 
     private int MAX_HEALTH = 100;
+    public LevelSystem playerlevel;
 
     // Update is called once per frame
     void Update()
@@ -51,6 +52,7 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log("I am Dead!");
+        playerlevel.exp = playerlevel.exp + 200;
         Destroy(gameObject);
     }
 }
