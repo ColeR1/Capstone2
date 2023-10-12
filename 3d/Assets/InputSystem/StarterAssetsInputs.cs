@@ -17,9 +17,9 @@ namespace StarterAssets
 		public bool analogMovement;
 
 		[Header("Mouse Cursor Settings")]
-		public bool cursorLocked = true;
+		public bool cursorLocked = false;
 		public bool cursorInputForLook = true;
-
+		
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 		public void OnMove(InputValue value)
 		{

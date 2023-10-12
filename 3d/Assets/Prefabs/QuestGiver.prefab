@@ -72,11 +72,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npc: {fileID: 11400000, guid: 0e38981da1c6c0b4eb9e744b8ac47c31, type: 2}
   isTalking: 0
-  player: {fileID: 0}
-  dialougeUI: {fileID: 0}
-  npcName: {fileID: 0}
-  npcDialougeBox: {fileID: 0}
-  playerResponse: {fileID: 0}
+  player: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+  dialougeUI: {fileID: 3966631081644943352, guid: 6206a9b416468d0479e1f44ff4dd7aa5,
+    type: 3}
+  npcName: {fileID: 510090422164800152, guid: aa1a3eb42dbf55742aaf7eef6cc6e4c0, type: 3}
+  npcDialougeBox: {fileID: 5795996079579150405, guid: 56cc98c77cd8ba546b29a13032217075,
+    type: 3}
+  playerResponse: {fileID: 2112133642254323687, guid: 8542832259964954da0fafc456a75f73,
+    type: 3}
 --- !u!114 &1597858573380529368
 MonoBehaviour:
   m_ObjectHideFlags: 0

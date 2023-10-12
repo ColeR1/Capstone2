@@ -59,10 +59,10 @@ public class DialougeManager : MonoBehaviour
             {
                 EndDialouge();
             }
-
+ 
             if(curResponseTracker == 0 && npc.playerDialouge.Length >=0)
             {
-                playerResponse.text = playerText[0]; //npc.playerDialouge[0];
+                playerResponse.text = npc.playerDialouge[0];
                 if(Input.GetKeyDown(KeyCode.Return))
                 {
                     npcDialougeBox.text = npc.dialouge[1];
@@ -70,7 +70,7 @@ public class DialougeManager : MonoBehaviour
             }
             else if(curResponseTracker == 1 && npc.playerDialouge.Length >=1)
             {
-                playerResponse.text = playerText[1];//npc.playerDialouge[1];
+                playerResponse.text = npc.playerDialouge[1];
                 if(Input.GetKeyDown(KeyCode.Return))
                 {
                     npcDialougeBox.text = npc.dialouge[2];
@@ -78,7 +78,7 @@ public class DialougeManager : MonoBehaviour
             }
             else if(curResponseTracker == 2 && npc.playerDialouge.Length >=2)
             {
-                playerResponse.text = playerText[2];//npc.playerDialouge[2];
+                playerResponse.text = npc.playerDialouge[2];
                 if(Input.GetKeyDown(KeyCode.Return))
                 {
                     npcDialougeBox.text = npc.dialouge[3];

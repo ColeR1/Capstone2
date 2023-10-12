@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4b9dedcef37c54cb11ffa8350a76ae, type: 3}
   m_Name: NPC@
   m_EditorClassIdentifier: 
-  names: 
-  dialouge: []
-  playerDialouge: []
+  names: npc2
+  dialouge:
+  - hello
+  - how are you
+  - goodbye
+  playerDialouge:
+  - 'hello
+
+'
+  - good
+  - bye.....

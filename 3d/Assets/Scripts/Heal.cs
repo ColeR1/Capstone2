@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class Heal : MonoBehaviour
 {
-    public float healCoolDown; //Cooldown so the player doesnt heal to 100 instantly;
-    public int healAmount; // how much the player will heal each tick;
+   public float healInterval = 2f;   // Time interval between each healing
+    public int healAmount = 1;        // Amount of HP to heal
+    public int quantity = 3;          // Initial quantity
+    public float cooldownTime = 10f;  // Time in seconds to wait before reactivating
+
+    private float nextHealTime;       // Time to trigger the next healing
+    private bool isCoolingDown = false;
+    private float cooldownEndTime;
+
 
     private PlayerHealthController playerHealth; //Reference to the players health;
-    private float lastheal; //Time since the last heal occured
+
 
     public GameObject player; //reference to the player gameobject;
 
     public AudioSource source;
     public AudioClip clip;
+
+    
 
     // Start is called before the first frame update
      private void Start() {
@@ -31,17 +40,48 @@ public class Heal : MonoBehaviour
         if(col.gameObject.CompareTag("Player"))
         {
             Debug.Log("Collided");
-
-            //Check if enough time has passed since last attack
-            if(Time.time - lastheal >= healCoolDown)
+       if (isCoolingDown)
+        {
+            if (Time.time >= cooldownEndTime)
             {
-                HealPlayer();
-                healCoolDown = Time.time; //Updaet the last attack time
+                // Cooldown is over, reset quantity and reactivate
+                quantity = 3; // Set this to your desired original quantity
+                isCoolingDown = false;
+                gameObject.SetActive(true);
             }
+        }
+        else
+        {
+            // Check if it's time to heal the player
+            if (Time.time >= nextHealTime && quantity > 0)
+            {
+                // Call the healing function and reduce quantity
+                HealPlayer(healAmount);
+                quantity--;
+
+                // Update the next healing time
+                nextHealTime = Time.time + healInterval;
+
+                // Check if quantity reaches 0 and start the cooldown
+                if (quantity == 0)
+                {
+                    StartCooldown();
+                }
+            }
+        }
         }
     }
 
-    private void HealPlayer()
+     private void StartCooldown()
+    {
+        // Set the cooldown end time
+        cooldownEndTime = Time.time + cooldownTime;
+        isCoolingDown = true;
+        gameObject.SetActive(false); // Deactivate the object
+    }
+
+
+    private void HealPlayer(int amount)
     {
         if(playerHealth != null)
         {
