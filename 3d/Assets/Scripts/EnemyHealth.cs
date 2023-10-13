@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private int health = 100;
+    public int health = 100;
 
-    private int MAX_HEALTH = 100;
+    private int MAX_HEALTH = 10;
     public LevelSystem playerlevel;
+    private EnemyStats enemyStats;
+
+    private void Start() {
+        health = MAX_HEALTH;
+    }
+
+
 
     // Update is called once per frame
     void Update()
@@ -52,7 +59,7 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log("I am Dead!");
-        playerlevel.exp = playerlevel.exp + 200;
+        playerlevel.exp += enemyStats.xpReward;
         Destroy(gameObject);
     }
 }

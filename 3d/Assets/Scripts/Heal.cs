@@ -39,6 +39,7 @@ public class Heal : MonoBehaviour
     {
         if(col.gameObject.CompareTag("Player"))
         {
+
             Debug.Log("Collided");
        if (isCoolingDown)
         {

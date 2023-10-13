@@ -7,11 +7,12 @@ using System.Threading;
 
 public class PlayerHealthController : MonoBehaviour
 {
+    private Heal heals;
  public int maxHealth = 100;           // Maximum health of the player
     public int currentHealth;             // Current health of the player
     public TextMeshProUGUI healthText;   // Reference to a UI Text element to display health
 
-    [SerializeField] private HealthBar _healthbar;
+    [SerializeField] public HealthBar _healthbar;
     private void Start()
     {
         currentHealth = maxHealth;        // Set the initial health to the maximum health
