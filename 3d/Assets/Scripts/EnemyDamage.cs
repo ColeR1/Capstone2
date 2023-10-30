@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-private PlayerHealthController playerHealth; // Reference to the player's health
+    private PlayerHealthController playerHealth; // Reference to the player's health
     public float attackCoolDown; // Time in seconds between each attack
     private float lastAttackTime; // Time since the last attack occurred
+    private int attackDamage = 10;
 
     private void Start()
     {
@@ -33,13 +34,7 @@ private PlayerHealthController playerHealth; // Reference to the player's health
     {
         if (playerHealth != null)
         {
-            EnemyLevelSystem enemyLevelSystem = GetComponent<EnemyLevelSystem>();
-            if (enemyLevelSystem != null)
-            {
-                int attackDamage = enemyLevelSystem.GetAttackDamage();
                 playerHealth.TakeDamage(attackDamage); // Deal damage to the player
             }
         }
-    }
-
-}
+    }   

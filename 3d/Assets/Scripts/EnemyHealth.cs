@@ -5,13 +5,14 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int health = 100;
+    private int maxHealth;
+    public LevelSystem playerLevel;
 
-    private int MAX_HEALTH = 10;
-    public LevelSystem playerlevel;
-    private EnemyStats enemyStats;
+
+
 
     private void Start() {
-        health = MAX_HEALTH;
+        maxHealth = health;
     }
 
 
@@ -44,11 +45,11 @@ public class EnemyHealth : MonoBehaviour
             throw new System.ArgumentOutOfRangeException("Cannot have negative healing");
         }
 
-        bool wouldBeOverMaxHealth = health + amount > MAX_HEALTH;
+        bool wouldBeOverMaxHealth = health + amount > maxHealth;
 
         if (wouldBeOverMaxHealth)
         {
-            this.health = MAX_HEALTH;
+            this.health = maxHealth;
         }
         else
         {
@@ -59,7 +60,7 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log("I am Dead!");
-        playerlevel.exp += enemyStats.xpReward;
+        playerLevel.exp = playerLevel.exp + 200;
         Destroy(gameObject);
     }
 }

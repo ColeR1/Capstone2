@@ -7,17 +7,12 @@ using TMPro;
 public class LevelSystem : MonoBehaviour
 {
 
+    public TextMeshProUGUI levelText;
     public int level;
     public int exp;
-    public PlayerHealthController player;
-    public AttackArea attack;
- 
-
-    public int BaseHealthIncrease = 10;
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -27,31 +22,14 @@ public class LevelSystem : MonoBehaviour
     }
 
     void LevelUp()
+
     {
-        if(exp>=Mathf.Pow(level, 2) +100)
+        if(exp>100)
         {
-            exp = exp - (int)(Mathf.Pow(level,2)+100 );
-            level = level + 1;
-            exp = 0;
-            levelEffect();
+            level = level +1;
+            exp =0;
+            levelText.text = "LV:" + level.ToString();
         }
-    }
-
-    void levelEffect()
-    {
-
-        //Increase the max health
-        player.maxHealth = player.maxHealth + BaseHealthIncrease;
-        //Update the player's current health to the new max health
-        player.currentHealth = player.maxHealth;
-        // Update the UI and health bar
-        player.UpdateHealthUI();
-        player._healthbar.UpdateHealthBar(player.maxHealth, player.currentHealth);
-        //Increase the BaseHealth Increase
-        BaseHealthIncrease = BaseHealthIncrease+(int)(Mathf.Pow(level,2)+5 ); // You can adjust the factor as needed
-        //Update the attack damage
-          attack.damage = attack.damage + (int)(Mathf.Pow(level, 2) + 5);
-
     }
 
     
