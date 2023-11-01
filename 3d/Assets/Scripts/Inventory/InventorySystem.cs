@@ -25,7 +25,38 @@ public class InventorySystem
     }
     public bool AddToInventory(InventoryItemData itemToAdd, int amountToAdd)
     {
-        inventorySlots[0] = new InventorySlot(itemToAdd, amountToAdd);
-        return true;
+        if(ContainsItem(itemToAdd, out List<InventorySlot> invSlot))
+        {
+           foreach ( var slot in invSlot)
+           {
+            if(slot.RoomLeftInStack(amountToAdd))
+            {
+                slot.AddToStack(amountToAdd);
+                onInventorySlotChanged?.Invoke(slot);
+                return true;
+            }
+           }
+        }
+
+        if(HasFreeSlot(out InventorySlot freeSlot))
+        {
+            freeSlot.UpdateInventorySlot(itemToAdd, amountToAdd);
+            onInventorySlotChanged?.Invoke(freeSlot);
+            return true;
+        }
+        return false;
+    }
+
+    public bool ContainsItem(InventoryItemData itemToAdd, out List<InventorySlot> invSlot)
+    {
+        invSlot = InventorySlots.Where(i => i.ItemData == itemToAdd).ToList();
+        Debug.Log(invSlot.Count);
+        return invSlot == null ? false : true;
+    }
+
+    public bool HasFreeSlot(out InventorySlot freeSlot)
+    {
+        freeSlot = InventorySlots.FirstOrDefault(i => i.ItemData == null);
+        return freeSlot == null ? false : true;
     }
 }

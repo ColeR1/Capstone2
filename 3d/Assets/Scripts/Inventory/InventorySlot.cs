@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.Json.Serialization.Metadata;
+using Unity.Mathematics;
 using UnityEngine;
 
 [System.Serializable]
@@ -23,10 +25,25 @@ public class InventorySlot
         ClearSlot();
     }
 
-    private void ClearSlot()
+    public void ClearSlot()
     {
         itemData = null;
         stackSize = -1;
+    }
+    public void AssignItem(InventorySlot invSlot)
+    {
+        if(itemData == invSlot.ItemData) AddToStack(invSlot.stackSize);
+        else
+        {
+            itemData = invSlot.itemData;
+            stackSize = 0;
+            AddToStack(invSlot.stackSize);
+        }
+    }
+    public void UpdateInventorySlot(InventoryItemData data, int amount)
+    {
+        itemData = data;
+        stackSize = amount;
     }
 
     public bool RoomLeftInStack(int amountToAdd, out int amountRemaining)
@@ -50,5 +67,20 @@ public class InventorySlot
     public void RemoveFromStack(int amount)
     {
         stackSize -= amount;
+    }
+
+    public bool SplitStack(out InventorySlot splitStack)
+    {
+        if(stackSize <=1)
+        {
+            splitStack = null;
+            return false;
+        }
+
+        int halfStack = Mathf.RoundToInt(stackSize / 2);
+        RemoveFromStack(halfStack);
+
+        splitStack = new InventorySlot(itemData, halfStack);
+        return true;
     }
 }
