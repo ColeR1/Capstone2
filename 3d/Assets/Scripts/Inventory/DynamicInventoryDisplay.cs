@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Unity.VisualScripting;
 
 public class DynamicInventoryDisplay : InventoryDisplay
 {
@@ -15,6 +16,7 @@ public class DynamicInventoryDisplay : InventoryDisplay
     {
         ClearSlot();
         inventorySystem = invToDisplay;
+        if(inventorySystem != null)inventorySystem.onInventorySlotChanged += UpdateSlot;
         AssignSlot(invToDisplay);
     }
 
@@ -43,5 +45,9 @@ public class DynamicInventoryDisplay : InventoryDisplay
         }
 
         if(slotDictionary != null) slotDictionary.Clear();
+    }
+
+    private void OnDisable() {
+        if(inventorySystem != null) inventorySystem.onInventorySlotChanged -= UpdateSlot;
     }
 }

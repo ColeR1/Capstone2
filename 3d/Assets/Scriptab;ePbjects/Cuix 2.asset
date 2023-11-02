@@ -17,5 +17,5 @@ MonoBehaviour:
   Description: 'This is an alterante version of the cuix
 
 '
-  Icon: {fileID: 21300000, guid: d825f371d7adaee44ba02d17d7fb3daa, type: 3}
+  Icon: {fileID: 21300000, guid: 3e9cedc6379f0284eb1638f06dc4c4fe, type: 3}
   MaxStackSize: 2
