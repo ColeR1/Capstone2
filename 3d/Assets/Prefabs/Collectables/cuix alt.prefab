@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23577696465131342}
   - component: {fileID: 3122349778317214861}
   - component: {fileID: 7043077835383198327}
+  - component: {fileID: 2179543146798173634}
   m_Layer: 0
   m_Name: cuix alt
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1752797493990403028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.99, y: 0.5, z: 4.063116}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.6, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -120,3 +121,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PickUpRadius: 1
   ItemData: {fileID: 11400000, guid: 2762dfbe7ee6fff4ea75ebe624eed828, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2179543146798173634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752797493990403028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d04ebfc13b7174595e76c47a98ce4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: c75a42cb-d1f9-46e7-9f91-3cc47d025e95
