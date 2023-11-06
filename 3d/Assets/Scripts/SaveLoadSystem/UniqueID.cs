@@ -24,6 +24,8 @@ public class UniqueID : MonoBehaviour
         else idDatabase.Add(_id, this.gameObject);
     }
 
+    [ContextMenu("Generate ID")]
+
     private void Generate()
     {
         _id = Guid.NewGuid().ToString();

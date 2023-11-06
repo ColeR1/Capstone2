@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb4f1b9655bcd084da9f4498b0ddc465, type: 3}
   m_Name: Cuix 2
   m_EditorClassIdentifier: 
-  ID: 0
-  displayName: 2
+  ID: 2
+  displayName: Cuix 2
   Description: 'This is an alterante version of the cuix
 
 '
+  GoldValue: 5
   Icon: {fileID: 21300000, guid: 3e9cedc6379f0284eb1638f06dc4c4fe, type: 3}
   MaxStackSize: 2
