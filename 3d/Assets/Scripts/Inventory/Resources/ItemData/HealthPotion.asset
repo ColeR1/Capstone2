@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4f1b9655bcd084da9f4498b0ddc465, type: 3}
+  m_Name: HealthPotion
+  m_EditorClassIdentifier: 
+  ID: 4
+  displayName: HPPotion
+  Description: This is a health potion that will heal you
+  GoldValue: 100
+  Icon: {fileID: 21300000, guid: b8f8f83a42f7b084f9ee922d05222461, type: 3}
+  MaxStackSize: 5
+  ItemPrefab: {fileID: 3450633863125235160, guid: f9368840d1728a64fa1fde7f64dd50e4,
+    type: 3}

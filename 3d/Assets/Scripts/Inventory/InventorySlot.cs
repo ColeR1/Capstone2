@@ -8,8 +8,6 @@ using UnityEngine;
 [System.Serializable]
 public class InventorySlot : ItemSlot
 {
-   
-
     public InventorySlot(InventoryItemData source, int amount)
     {
         itemData = source;

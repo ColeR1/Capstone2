@@ -1,21 +1,18 @@
 {
     "collectedItems": [
-        "3b82a2d4-b6fc-49e9-a8cd-dd51f3dc9a99",
-        "3da6e98f-abfc-421e-b625-7846a11c0fc2",
-        "3f0b6cdc-7f8f-4489-84af-a43cad7bf313",
-        "7e275fd8-16c1-43e7-9247-a7325d61c490",
-        "9b94851b-a519-4462-bba2-5a146627c791",
-        "383f1c32-788e-48c1-8fd5-f56ca67d5099",
-        "18639883-bceb-4d25-bc32-9ab2d9105149",
-        "dae8e1e5-9ff5-40b3-a835-8357299b6f8e",
-        "a9d8a4a5-adbd-4afc-aaa3-a79efd941dc2",
-        "d251b425-66a8-4941-ab93-f10e90646765",
-        "d251b425-66a8-4941-ab93-f10e90646765",
-        "d251b425-66a8-4941-ab93-f10e90646765",
-        "6a4317ef-dcfb-4aee-bb5d-086d425d960b",
-        "a7d3144e-d2ad-4871-aedc-233ba914b655",
-        "24fcbea8-a2a6-4b74-bf23-91825246ed9b",
-        "cbf5c2ae-4f8e-4a8f-89ac-df3dc500cb30"
+        "382f4168-5806-4070-addd-9164372b6162",
+        "3a352e1a-78e4-416f-9fca-b9bb95777c39",
+        "b106c182-048b-4be7-b8d0-0a92cc22cffb",
+        "5ddf8a2d-a1ee-4302-8387-d31e296a7151",
+        "6e108791-c8c8-40ea-84e4-ca3a158a861d",
+        "ec832e56-bef2-49fd-8396-bae16a445218",
+        "ad1acf8a-348b-48b8-8f4f-412a6d69e02d",
+        "87c4a0bc-16a3-48a9-b014-3e767ec40a0b",
+        "5ce0bdab-2698-4888-8655-47064d04ccbc",
+        "c1fabe7c-63e8-40fd-b638-67e45fa7b6ea",
+        "ace2481d-1087-4881-8fa0-8946aa392ab4",
+        "87909d6f-6911-4a44-b46c-9c6fbbf95a30",
+        "61757650-fefe-463b-8728-44a7a5fe0655"
     ],
     "activeItems": {
         "keys": [],
@@ -23,11 +20,8 @@
     },
     "chestDictionary": {
         "keys": [
-            "6591eae4-27ea-49ac-a97a-c7790ec8b939",
-            "58b10c49-d850-466b-987d-1076ead50962",
-            "65e8f776-394d-4746-86f9-008129c56843",
-            "b5312429-bf22-4638-9eb8-70941dda961e",
-            "822786ff-361f-45c4-99b2-05c10c8a344c"
+            "594080a0-53ed-4028-8e54-3187b65c8c30",
+            "10905ab4-e0d3-491f-982f-86fd348d688e"
         ],
         "values": [
             {
@@ -35,6 +29,181 @@
                     "inventorySlots": [
                         {
                             "itemData": {
+                                "instanceID": 31660
+                            },
+                            "_itemID": -1,
+                            "stackSize": 5
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 31660
+                            },
+                            "_itemID": -1,
+                            "stackSize": 3
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
+                                "instanceID": 0
+                            },
+                            "_itemID": -1,
+                            "stackSize": -1
+                        },
+                        {
+                            "itemData": {
                                 "instanceID": 0
                             },
                             "_itemID": -1,
@@ -106,9 +275,9 @@
                     ]
                 },
                 "posiiton": {
-                    "x": 3.111999988555908,
-                    "y": 0.4999995231628418,
-                    "z": 20.20800018310547
+                    "x": -6.010002136230469,
+                    "y": 1.3000001907348633,
+                    "z": 0.6100006103515625
                 },
                 "rotation": {
                     "x": 0.0,
@@ -122,10 +291,10 @@
                     "inventorySlots": [
                         {
                             "itemData": {
-                                "instanceID": 0
+                                "instanceID": 31662
                             },
                             "_itemID": -1,
-                            "stackSize": -1
+                            "stackSize": 3
                         },
                         {
                             "itemData": {
@@ -193,444 +362,8 @@
                     ]
                 },
                 "posiiton": {
-                    "x": 3.111999988555908,
-                    "y": 0.4999995231628418,
-                    "z": 21.20800018310547
-                },
-                "rotation": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0,
-                    "w": 1.0
-                }
-            },
-            {
-                "invSystem": {
-                    "inventorySlots": [
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        }
-                    ]
-                },
-                "posiiton": {
-                    "x": 3.111999988555908,
-                    "y": 0.4999995231628418,
-                    "z": 22.20800018310547
-                },
-                "rotation": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0,
-                    "w": 1.0
-                }
-            },
-            {
-                "invSystem": {
-                    "inventorySlots": [
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        }
-                    ]
-                },
-                "posiiton": {
-                    "x": -6.010000228881836,
-                    "y": 1.2999999523162842,
-                    "z": 0.6100000143051148
-                },
-                "rotation": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0,
-                    "w": 1.0
-                }
-            },
-            {
-                "invSystem": {
-                    "inventorySlots": [
-                        {
-                            "itemData": {
-                                "instanceID": 31434
-                            },
-                            "_itemID": -1,
-                            "stackSize": 4
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 31434
-                            },
-                            "_itemID": -1,
-                            "stackSize": 4
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        },
-                        {
-                            "itemData": {
-                                "instanceID": 0
-                            },
-                            "_itemID": -1,
-                            "stackSize": -1
-                        }
-                    ]
-                },
-                "posiiton": {
-                    "x": -3.0299999713897707,
-                    "y": 0.5,
+                    "x": -3.029998779296875,
+                    "y": 0.5000009536743164,
                     "z": 0.0
                 },
                 "rotation": {
@@ -647,13 +380,6 @@
             "inventorySlots": [
                 {
                     "itemData": {
-                        "instanceID": 31434
-                    },
-                    "_itemID": -1,
-                    "stackSize": 4
-                },
-                {
-                    "itemData": {
                         "instanceID": 0
                     },
                     "_itemID": -1,
@@ -668,24 +394,31 @@
                 },
                 {
                     "itemData": {
-                        "instanceID": 31456
+                        "instanceID": 0
                     },
                     "_itemID": -1,
-                    "stackSize": 2
+                    "stackSize": -1
                 },
                 {
                     "itemData": {
-                        "instanceID": 31456
+                        "instanceID": 31638
                     },
                     "_itemID": -1,
                     "stackSize": 1
                 },
                 {
                     "itemData": {
-                        "instanceID": 31434
+                        "instanceID": 31582
                     },
                     "_itemID": -1,
                     "stackSize": 1
+                },
+                {
+                    "itemData": {
+                        "instanceID": 0
+                    },
+                    "_itemID": -1,
+                    "stackSize": -1
                 },
                 {
                     "itemData": {

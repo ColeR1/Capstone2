@@ -14,7 +14,9 @@ public class Dialogue
 
 public class NPCDialouge : MonoBehaviour
 {
- public GameObject dialogueUI;
+    public string NPCN;
+    public TMP_Text NPCNAme;
+    public GameObject dialogueUI;
     public TMP_Text dialogueText;
 
     public Dialogue dialogueData;
@@ -75,6 +77,7 @@ public class NPCDialouge : MonoBehaviour
 
         if (dialogueData != null && dialogueData.lines.Length > 0)
         {
+            NPCNAme.SetText($"{NPCN}");
             currentLine = 0;
             dialogueText.text = dialogueData.lines[currentLine];
         }

@@ -8,17 +8,18 @@ using UnityEngine;
 [RequireComponent(typeof(UniqueID))]
 public class ItemPickUp : MonoBehaviour
 {
-    public float PickUpRadius =1f;
+    public float PickUpRadius = 1f;
     public InventoryItemData ItemData;
-
     private SphereCollider myCollider;
+
+    [SerializeField] private float _rotationSpeed = 20f;
 
     [SerializeField] private ItemPickUpSaveData itemSaveData;
     private string id;
 
     private void Awake()
     {
-        id = GetComponent<UniqueID>().ID;
+        
         SaveLoad.OnLoadGame += LoadGame;
         itemSaveData = new ItemPickUpSaveData(ItemData, transform.position, transform.rotation);
 
@@ -28,9 +29,13 @@ public class ItemPickUp : MonoBehaviour
     }
 
     private void Start() {
+        id = GetComponent<UniqueID>().ID;
         SaveGameManager.data.activeItems.Add(id, itemSaveData);
     }
 
+    private void Update() {
+        transform.Rotate(Vector3.up * _rotationSpeed * Time.deltaTime);
+    }
     private void LoadGame(SaveData data)
     {
         if(data.collectedItems.Contains(id)) Destroy(this.gameObject);

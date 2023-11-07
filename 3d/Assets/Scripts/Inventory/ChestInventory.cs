@@ -6,6 +6,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(UniqueID))]
 public class ChestInventory : InventoryHolder, IInteractable
 {
+    private string id;
     public UnityAction<IInteractable> OnInteractionComplete {get; set;}
 
     protected override void Awake()
@@ -16,6 +17,7 @@ public class ChestInventory : InventoryHolder, IInteractable
 
     private void Start() {
         var chestSaveData = new InventorySaveData(primaryInventorySystem, transform.position, transform.rotation);
+         id = GetComponent<UniqueID>().ID;
 
         SaveGameManager.data.chestDictionary.Add(GetComponent<UniqueID>().ID, chestSaveData);
     }

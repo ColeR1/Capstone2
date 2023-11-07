@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     if(Input.GetMouseButtonDown(0))
+     if(Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
      {
         Attack();
      }   
