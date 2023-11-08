@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8574e1981cc1d8a41b40f5a3c37e3fe6, type: 3}
-  m_Name: New Shop Item List
+  m_Name: Potion Seller
   m_EditorClassIdentifier: 
   _items:
-  - ItemData: {fileID: 11400000, guid: a1c92f93aa1e2734799c6c305a33733a, type: 2}
+  - ItemData: {fileID: 11400000, guid: f06b75e62188bc448b607ef8bf7bfb03, type: 2}
     Amount: 3
-  - ItemData: {fileID: 11400000, guid: 2762dfbe7ee6fff4ea75ebe624eed828, type: 2}
+  - ItemData: {fileID: 11400000, guid: b7276289d245a6a4292213bf9a3c555f, type: 2}
     Amount: 2
-  - ItemData: {fileID: 11400000, guid: c394d7cf45948804584c96bbac1536b6, type: 2}
+  - ItemData: {fileID: 11400000, guid: 20b67b5a48db27040ae65fc25308832f, type: 2}
     Amount: 1
   _maxAllowedGold: 1000
   _sellMarkUp: 0.25

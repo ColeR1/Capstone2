@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 285, y: 25}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 353.77, y: 25}
+  m_SizeDelta: {x: 337.55, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1025452436713487897
 CanvasRenderer:
@@ -66,9 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cubix
-
-'
+  m_text: Hp Potion
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -95,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30.5
+  m_fontSizeBase: 30.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -448,7 +446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 469, y: -50}
+  m_AnchoredPosition: {x: 634, y: -50}
   m_SizeDelta: {x: 46.9, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7568111291951013654
@@ -587,6 +585,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55db4db4d0a236945a0ad9d3446fbb14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _itemSprite: {fileID: 999119653131496615}
+  _itemName: {fileID: 4373519842465107663}
+  _itemCount: {fileID: 1153391996826886501}
+  _assignedItemSlot:
+    itemData: {fileID: 0}
+    _itemID: -1
+    stackSize: -1
+  _addItemToCartButton: {fileID: 3963281482304287410}
+  _removeItemFromCartButton: {fileID: 1960931703365336732}
 --- !u!1 &8313988217795730240
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +768,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 411, y: -50}
+  m_AnchoredPosition: {x: 576, y: -50}
   m_SizeDelta: {x: 46.9, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1082278326145000750
@@ -882,7 +889,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 84, y: -50}
-  m_SizeDelta: {x: 126.3, y: 180.8}
+  m_SizeDelta: {x: 85.46, y: 108.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2890428529460873014
 CanvasRenderer:
@@ -912,7 +919,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d825f371d7adaee44ba02d17d7fb3daa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba7dbca07c712794cab21a54026e525b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

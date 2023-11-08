@@ -9,12 +9,28 @@ using System.Linq;
 public class InventorySystem
 {
     [SerializeField] private  List<InventorySlot> inventorySlots;
+    [SerializeField] private int _gold;
+
+    public int Gold => _gold;
 
     public List<InventorySlot> InventorySlots => inventorySlots;
     public int InventorySize => InventorySlots.Count;
     public UnityAction<InventorySlot> onInventorySlotChanged;
 
     public InventorySystem(int size)
+    {
+        _gold = 0;
+
+        CreateInventory(size);
+    }
+
+    public InventorySystem(int size, int gold)
+    {
+        _gold = gold;
+        CreateInventory(size);
+    }
+
+    private void CreateInventory(int size)
     {
         inventorySlots = new List<InventorySlot>(size);
 

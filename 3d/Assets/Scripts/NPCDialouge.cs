@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using StarterAssets;
 
 [System.Serializable]
 public class Dialogue
@@ -26,7 +27,6 @@ public class NPCDialouge : MonoBehaviour
     private int currentLine = 0;
 
     private bool Talking;
-
     void Start()
     {
         dialogueUI.SetActive(false);
@@ -65,6 +65,7 @@ public class NPCDialouge : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
             {
                 ContinueDialogue();
+                
             }
         }
     }

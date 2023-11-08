@@ -12,6 +12,11 @@ public class ShopSystem
    [SerializeField] private float _buyMarkUp;
    [SerializeField] private float _sellMarkUp;
 
+   public List<ShopSlot> ShopInventory => _shopInvnetory;
+   public int AvailableGold => _availableGold;
+   public float BuyMarkUp => _buyMarkUp;
+   public float SellMarkUp => _sellMarkUp;
+
    public ShopSystem(int size, int gold, float buyMarkUp, float sellMarkUp)
    {
     _availableGold = gold;

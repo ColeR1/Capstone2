@@ -135,4 +135,6 @@ MonoBehaviour:
   inventorySize: 10
   primaryInventorySystem:
     inventorySlots: []
+    _gold: 0
   offset: 10
+  thirdPersonController: {fileID: 0}
