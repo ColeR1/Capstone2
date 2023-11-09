@@ -50,14 +50,62 @@ public class ShopKeeperDisplay : MonoBehaviour
 
     private void RefreshDisplay()
     {
+        if(_buyButton != null)
+        {
+            _buyButtonText.text = _isSelling ? "Sell Items" : "Buy Items";
+            _buyButton.onClick.RemoveAllListeners();
+            if(_isSelling) _buyButton.onClick.AddListener(sellItems);
+            else _buyButton.onClick.AddListener(BuyItems);
+        }
         ClearSlots();
+        ClearItemPreview();
 
         _basketTotalText.enabled = false;
         _buyTab.gameObject.SetActive(true);
         _basketTotal = 0;
         _playerGoldText.text =$"Player Gold: {_playerInventoryHolder.PrimaryInventorySystem.Gold}";
         _shopGoldText.text =$"Shop Gold: {_shopSystem.AvailableGold}";
-        DisplayShopInventory();
+        if(_isSelling)DisplayPlayerInventory();
+        else DisplayShopInventory();
+    }
+
+    private void BuyItems()
+    {
+        if(_playerInventoryHolder.PrimaryInventorySystem.Gold < _basketTotal) return;
+
+        if(!_playerInventoryHolder.PrimaryInventorySystem.CheckInventoryRemaining(_shoppingCart)) return;
+
+        foreach(var kvp in _shoppingCart)
+        {
+            _shopSystem.PurchaseItem(kvp.Key, kvp.Value);
+
+            for(int i =0; i< kvp.Value; i++)
+            {
+                _playerInventoryHolder.PrimaryInventorySystem.AddToInventory(kvp.Key,1);
+            }
+        }
+
+        _shopSystem.GainGold(_basketTotal);
+         _playerInventoryHolder.PrimaryInventorySystem.SpendGold(_basketTotal);
+
+         RefreshDisplay();
+    }
+
+    private void sellItems()
+    {
+        if(_shopSystem.AvailableGold < _basketTotal) return;
+
+        foreach ( var kvp in _shoppingCart)
+        {
+            var price = GetModifiedPrice(kvp.Key, kvp.Value, _shopSystem.SellMarkUp);
+
+            _shopSystem.SellItem(kvp.Key, kvp.Value, price);
+
+            _playerInventoryHolder.PrimaryInventorySystem.GainGold(price);
+            _playerInventoryHolder.PrimaryInventorySystem.RemoveItemsFromInventory(kvp.Key, kvp.Value);
+        }
+
+        RefreshDisplay();
     }
 
     private void ClearSlots()
@@ -87,9 +135,16 @@ public class ShopKeeperDisplay : MonoBehaviour
         }
     }
 
-    private void DisplayerPlayerInventory()
+    private void DisplayPlayerInventory()
     {
+        foreach ( var item in _playerInventoryHolder.PrimaryInventorySystem.GetAllItemsHeld())
+        {
+            var tempSlot = new ShopSlot();
+            tempSlot.AssignItem(item.Key, item.Value);
 
+            var shopSlot = Instantiate(_shopslotPrefab, _itemListContentPanel.transform);
+            shopSlot.Init(tempSlot, _shopSystem.SellMarkUp);
+        }
     }
 
     public void AddItemToCart(ShopSlotUI shopSlotUI)
@@ -98,14 +153,96 @@ public class ShopKeeperDisplay : MonoBehaviour
 
         UpdateItemPreview(shopSlotUI);
 
+        var price = GetModifiedPrice(data,1, shopSlotUI.MarkUp);
+        
+
         if(_shoppingCart.ContainsKey(data))
         {
             _shoppingCart[data]++;
-            var price = GetModifiedPrice(data,1, shopSlotUI.MarkUp);
+            var newString = $"{data.displayName} ({price}G) x{_shoppingCart[data]}";
+            _shoppingCartUI[data].SetItemText(newString);
+            
         }
+        else
+        {
+            _shoppingCart.Add(data,1);
+
+            var shoppingCartTextObject = Instantiate(_shoppingCartItemPrefab, _shoppingCartContentPanel.transform);
+            var newString = $"{data.displayName} ({price}G) x 1";
+            shoppingCartTextObject.SetItemText(newString);
+            _shoppingCartUI.Add(data, shoppingCartTextObject);
+        }
+
+        _basketTotal += price;
+        _basketTotalText.text = $"Total: {_basketTotal}G";
+
+        if(_basketTotal > 0 && !_basketTotalText.IsActive())
+        {
+            _basketTotalText.enabled = true;
+            _buyButton.gameObject.SetActive(true);
+        }
+
+        CheckCartVsAvailableGold();
+    }
+    public void RemoveItemFromCart(ShopSlotUI shopSlotUI)
+    {
+        var data = shopSlotUI.AssignedItemSlot.ItemData;
+        var price = GetModifiedPrice(data, 1, shopSlotUI.MarkUp);
+
+        if(_shoppingCart.ContainsKey(data))
+        {
+            _shoppingCart[data]--;
+            var newString = $"{data.displayName} ({price}G) x {_shoppingCart[data]}";
+            _shoppingCartUI[data].SetItemText(newString);
+
+            if(_shoppingCart[data] <= 0)
+            {
+                _shoppingCart.Remove(data);
+                var tempObj = _shoppingCartUI[data].gameObject;
+                _shoppingCartUI.Remove(data);
+                Destroy(tempObj);
+            }
+        }
+
+        _basketTotal -= price;
+        _basketTotalText.text = $"Total: {_basketTotal}G";
+
+        if(_basketTotal <= 0 && _basketTotalText.IsActive())
+        {
+            _basketTotalText.enabled = false;
+            _buyButton.gameObject.SetActive(false);
+            ClearItemPreview();
+            return;
+        }
+
+        CheckCartVsAvailableGold();
+
     }
 
-    private static int GetModifiedPrice(InventoryItemData data, int amount, float markUp)
+    private void ClearItemPreview()
+    {
+        _itemPreviewSprite.sprite = null;
+        _itemPreviewSprite.color = Color.clear;
+        _itemPreviewName.text = "";
+        _itemPreviewDescription.text = "";
+    }
+
+    private bool _isSelling;
+
+    private void CheckCartVsAvailableGold()
+    {
+        var goldToCheck = _isSelling? _shopSystem.AvailableGold : _playerInventoryHolder.PrimaryInventorySystem.Gold;
+
+        _basketTotalText.color = _basketTotal > goldToCheck ? Color.red : Color.white;
+
+        if(_isSelling || _playerInventoryHolder.PrimaryInventorySystem.CheckInventoryRemaining(_shoppingCart)) return;
+
+        _basketTotalText.text = "Not enough room in invetory.";
+        _basketTotalText.color = Color.red;
+
+    }
+
+    public static int GetModifiedPrice(InventoryItemData data, int amount, float markUp)
     {
         var baseValue = data.GoldValue * amount;
 
@@ -114,10 +251,24 @@ public class ShopKeeperDisplay : MonoBehaviour
 
     private void UpdateItemPreview(ShopSlotUI shopSlotUI)
     {
+        var data = shopSlotUI.AssignedItemSlot.ItemData;
 
+        _itemPreviewSprite.sprite = data.Icon;
+        _itemPreviewSprite.color = Color.white;
+        _itemPreviewName.text = data.displayName;
+        _itemPreviewDescription.text = data.Description;
     }
-    public void RemoveItemFromCart(ShopSlotUI shopSlotUI)
+
+    public void OnBuyTabPressed()
     {
-
+        _isSelling = false;
+        RefreshDisplay();
     }
+
+    public void OnSellTabPressed()
+    {
+        _isSelling = true;
+        RefreshDisplay();
+    }
+    
 }

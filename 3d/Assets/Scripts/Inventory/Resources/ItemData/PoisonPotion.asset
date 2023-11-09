@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 1
   displayName: PoisonPotion
   Description: This will posion the user
-  GoldValue: 500
+  GoldValue: 300
   Icon: {fileID: 21300000, guid: c876b7370c8b7c74799049b08d7897de, type: 3}
   MaxStackSize: 0
   ItemPrefab: {fileID: 2339642803738982928, guid: b930273aadc8cfc4e8f6c73ceed7b52e,

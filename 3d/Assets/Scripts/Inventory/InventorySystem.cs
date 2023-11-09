@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
+using System;
+using Unity.VisualScripting;
 
 
 [System.Serializable]
 public class InventorySystem
 {
     [SerializeField] private  List<InventorySlot> inventorySlots;
-    [SerializeField] private int _gold;
+     private int _gold;
 
     public int Gold => _gold;
 
@@ -74,5 +76,70 @@ public class InventorySystem
     {
         freeSlot = InventorySlots.FirstOrDefault(i => i.ItemData == null);
         return freeSlot == null ? false : true;
+    }
+
+    internal bool CheckInventoryRemaining(Dictionary<InventoryItemData, int> shoppingCart)
+    {
+        var clonedSystem = new InventorySystem(this.InventorySize);
+
+        for(int i = 0; i<InventorySize; i++)
+        {
+            clonedSystem.InventorySlots[i].AssignItem(this.InventorySlots[i].ItemData,this.InventorySlots[i].StackSize);
+        }
+
+        foreach (var kvp in shoppingCart)
+        {
+            for(int i = 0; i< kvp.Value; i++)
+            {
+                if(!clonedSystem.AddToInventory(kvp.Key,1)) return false;
+            }
+        }
+
+        return true;
+    }
+
+    internal void SpendGold(int basketTotal)
+    {
+        _gold -= basketTotal;
+    }
+
+    public Dictionary<InventoryItemData, int> GetAllItemsHeld()
+    {
+        var distinctItems = new Dictionary<InventoryItemData, int>();
+
+        foreach (var item in inventorySlots)
+        {
+            if(item.ItemData == null) continue;
+
+            if(!distinctItems.ContainsKey(item.ItemData)) distinctItems.Add(item.ItemData, item.StackSize);
+            else distinctItems[item.ItemData] += item.StackSize;
+        }
+
+        return distinctItems;
+    }
+
+    internal void GainGold(int price)
+    {
+        _gold += price;
+    }
+
+    internal void RemoveItemsFromInventory(InventoryItemData data, int amount)
+    {
+        if(ContainsItem(data, out List<InventorySlot> invSlot))
+        {
+            foreach (var slot in invSlot)
+            {
+                var StackSize = slot.StackSize;
+
+                if(StackSize > amount) slot.RemoveFromStack(amount);
+                else
+                {
+                    slot.RemoveFromStack(StackSize);
+                    amount -= StackSize;
+                }
+
+                onInventorySlotChanged?.Invoke(slot);
+            }
+        }
     }
 }

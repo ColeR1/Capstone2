@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShoppingCartItemUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private TextMeshProUGUI _itemText;
 
-    // Update is called once per frame
-    void Update()
+    public void SetItemText(string newString)
     {
-        
+        _itemText.text = newString;
     }
 }

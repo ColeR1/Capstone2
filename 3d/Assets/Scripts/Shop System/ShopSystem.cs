@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +42,7 @@ public class ShopSystem
     if(ContainsItem(data, out ShopSlot shopSlot))
     {
         shopSlot.AddToStack(amount);
+        return;
     }
 
     var freeSlot = GetFreeSlot();
@@ -66,4 +68,28 @@ public class ShopSystem
     return shopSlot != null;
 
    }
+
+    public void PurchaseItem(InventoryItemData data, int amount)
+    {
+        if(!ContainsItem(data, out ShopSlot slot)) return;
+
+        slot.RemoveFromStack(amount);
+    }
+
+    public void GainGold(int basketTotal)
+    {
+        _availableGold += basketTotal;
+    }
+
+    public void SellItem(InventoryItemData kvpKey, int kvpValue, int price)
+    {
+        AddToShop(kvpKey,kvpValue);
+        ReduceGold(price);
+        
+    }
+
+    private void ReduceGold(int price)
+    {
+        _availableGold -= price;
+    }
 }
